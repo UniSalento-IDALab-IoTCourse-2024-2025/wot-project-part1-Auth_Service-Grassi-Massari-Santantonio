@@ -1,0 +1,31 @@
+services:
+  auth-sba:
+      image: openjdk:23-jdk
+      container_name: auth-sba
+      ports:
+        - 8080:8080
+        - 8000:8000
+      expose:
+        - "8000"
+      depends_on:
+        - authdb
+      networks:
+        - my-net
+      volumes:
+        - ./build/libs/fatsgo_authentication-0.0.1-SNAPSHOT.jar:/app/app.jar
+      working_dir: /app
+      entrypoint: >
+        java -Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000 -jar /app/app.jar
+
+  authdb:
+    image: mongo:5.0
+    container_name: authdb
+    ports:
+        - 27017:27017
+    networks:
+          - my-net
+
+networks:
+      my-net:
+        driver:
+         'bridge'
