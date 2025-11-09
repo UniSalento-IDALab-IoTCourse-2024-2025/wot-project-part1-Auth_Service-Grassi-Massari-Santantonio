@@ -15,6 +15,7 @@ public class User {
     private State status;
     private Role role;
     private boolean isSynchronized;
+    private String pictureUrl;
 
     // Getters and Setters
     public String getId() {
@@ -78,5 +79,12 @@ public class User {
     }
     public void setSynchronized(boolean aSynchronized) {
         isSynchronized = aSynchronized;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 }

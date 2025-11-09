@@ -14,6 +14,7 @@ public class ShopKeeperDto {
     private String email;
     private Role role = Role.SHOPKEEPER;
     private State status;
+    private String pictureUrl;
 
     //Restaurrant info
     private String restaurantName;
@@ -83,6 +84,12 @@ public class ShopKeeperDto {
     }
     public void setStatus(State status) {
         this.status = status;
+    }
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 
     public String getRestaurantName() {

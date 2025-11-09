@@ -31,7 +31,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             "/registration", 
             "/login", 
             "/auth",
-            "/status" 
+            "/status",
+            "/admin"
     );
 
     @Override
